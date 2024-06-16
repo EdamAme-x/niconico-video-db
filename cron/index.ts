@@ -22,6 +22,7 @@ Deno.cron("Get Videos And Save To DB", "* * * * *", () => {
             for (const video of data) {
                 await kv.set(["videos", video.id], video);
                 count.inc();
+                console.log("[Cron] Got Videos And Save To DB Success : " + video.id);
             }
         }else {
             console.log("[Cron] Got Videos And Save To DB Error : ", status);
