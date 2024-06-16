@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run -A --watch ./index.ts"
+		"dev": "deno run -A --watch --unstable ./index.ts"
 	},
 	"fmt": {
 		"useTabs": true,
