@@ -1,6 +1,5 @@
 import { Hono } from "@hono/hono";
 import "./cron/index.ts";
-import { getVideos } from "./src/getVideos.ts";
 
 const app = new Hono({
     strict: false
@@ -17,6 +16,17 @@ app.get("/", async (c) => {
     }
 
     return c.text(`Saved: ${videoList.length} videos`)
+})
+
+app.get("/videos", async (c) => {
+    const videoListIter = await kv.list({ prefix: ["videos"] });
+    const videoList = [];
+
+    for await (const video of videoListIter) {
+        videoList.push(video.value);
+    }
+
+    return c.json(videoList)
 })
 
 Deno.serve({ port: 3000 }, app.fetch);
