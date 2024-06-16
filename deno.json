@@ -1,0 +1,20 @@
+{
+	"tasks": {
+		"dev": "deno run -A --watch ./index.ts"
+	},
+	"fmt": {
+		"useTabs": true,
+		"singleQuote": false,
+		"indentWidth": 4,
+		"semiColons": true,
+		"lineWidth": 120,
+		"proseWrap": "always"
+	},
+	"imports": {
+		"@hono/hono": "jsr:@hono/hono@^4.4.6"
+	},
+    "unstable": [
+        "kv",
+        "cron"
+    ]
+}
