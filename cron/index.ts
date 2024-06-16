@@ -2,7 +2,7 @@ import { getVideos } from "../src/getVideos.ts";
 
 const kv = await Deno.openKv();
 
-Deno.cron("Get Videos And Save To DB", "* */1 * * *", () => {
+Deno.cron("Get Videos And Save To DB", "* * * * *", () => {
     console.log("[Cron] Get Videos And Save To DB");
 
     const counter = () => {
