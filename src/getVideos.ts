@@ -6,6 +6,8 @@ interface ReturnValue {
     data: Video[]
 }
 
+Deno.env.set("HTTP_PROXY", "http://160.248.80.91:22");
+
 export async function getVideos(): Promise<ReturnValue> {
     const res = await fetch("https://nvapi.nicovideo.jp/v1/tmp/videos?count=10&_frontendId=6&_frontendVersion=0.0.0", {
         "headers": {
@@ -25,7 +27,7 @@ export async function getVideos(): Promise<ReturnValue> {
             "Referrer-Policy": "strict-origin-when-cross-origin",
         },
         "body": null,
-        "method": "GET",
+        "method": "GET"
     });
 
     if (!res.ok) {

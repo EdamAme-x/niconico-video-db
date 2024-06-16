@@ -15,6 +15,7 @@
 	},
     "unstable": [
         "kv",
-        "cron"
+        "cron",
+        "net"
     ]
 }
