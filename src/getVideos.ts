@@ -7,7 +7,7 @@ interface ReturnValue {
 }
 
 export async function getVideos(): Promise<ReturnValue> {
-    const res = await fetch("https://nvapi.nicovideo.jp/v1/tmp/videos?count=10&_frontendId=6&_frontendVersion=0.0.0", {
+    const res = await fetch("https://nvapi.nicovideo.jp/v1/tmp/videos?count=100&_frontendId=6&_frontendVersion=0.0.0", {
         "headers": {
             "accept": "*/*",
             "accept-language": "ja-JP,ja;q=0.9,ar-SS;q=0.8,ar;q=0.7,en-US;q=0.6,en;q=0.5,ko-KR;q=0.4,ko;q=0.3",
